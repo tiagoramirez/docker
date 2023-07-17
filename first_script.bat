@@ -28,4 +28,29 @@ docker logs -f proxy
 @REM LAST 10 logs LOGS
 docker logs --tail 10 -f proxy
 
+@REM LIST VOLUMES
+docker volume ls
+
+@REM CREATE VOLUME
+docker volume create mi_volumen
+
+@REM MOUNT VOLUME
+docker run -d --name db --mount src=mi_volumen,dst=/data/db mongo
+
+@REM GET CONTAINER INFORMATION
+docker inspect db
+
+@REM ENTER CONTAINER BASH
+docker exec -it db bash
+
+@REM DATABASE MONGO TESTS:
+@REM ENTER MONGO BASH
+mongosh
+@REM CHANGE DATABASE
+use platzi
+@REM INSERT VALUE
+db.users.insertOne({"name":"Tiago"})
+@REM GET ALL DATA
+db.users.find()
+
 pause
