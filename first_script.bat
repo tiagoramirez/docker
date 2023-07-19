@@ -53,4 +53,21 @@ db.users.insertOne({"name":"Tiago"})
 @REM GET ALL DATA
 db.users.find()
 
+@REM DOWNLOAD IMAGE
+docker pull ubuntu
+
+@REM LIST IMAGES
+docker image ls
+
+@REM BUILD IMAGE
+docker build -t ubuntu:miversionextra imagenes/.
+
+@REM RETAG IMAGE
+docker tag ubuntu:miversionextra tiagoramirez/ubuntu:miversionextra
+
+@REM RUN MY IMAGE
+docker run -it tiagoramirez/ubuntu:miversionextra
+
+@REM UPLOAD IMAGE TO DOCKER HUB
+
 pause
