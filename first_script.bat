@@ -69,5 +69,6 @@ docker tag ubuntu:miversionextra tiagoramirez/ubuntu:miversionextra
 docker run -it tiagoramirez/ubuntu:miversionextra
 
 @REM UPLOAD IMAGE TO DOCKER HUB
+docker push tiagoramirez/ubuntu:miversionextra
 
 pause
