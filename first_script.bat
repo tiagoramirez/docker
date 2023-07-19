@@ -71,4 +71,7 @@ docker run -it tiagoramirez/ubuntu:miversionextra
 @REM UPLOAD IMAGE TO DOCKER HUB
 docker push tiagoramirez/ubuntu:miversionextra
 
+@REM SEE IMAGE HISTORY
+docker history tiagoramirez/ubuntu:miversionextra
+
 pause
