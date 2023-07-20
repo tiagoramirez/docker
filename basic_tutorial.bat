@@ -74,4 +74,16 @@ docker push tiagoramirez/ubuntu:mi.extra.version
 @REM SEE IMAGE HISTORY
 docker history tiagoramirez/ubuntu:mi.extra.version
 
+@REM LIST NETWORKS
+docker network ls
+
+@REM CREATE NEW NETWORK
+docker network create --attachable new_net
+
+@REM GET NETWORK INFORMATION
+docker network inspect new_net
+
+@REM CONNECT CONTAINER TO NETWORK
+docker network connect new_net db
+
 pause
