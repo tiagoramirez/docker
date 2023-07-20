@@ -86,4 +86,24 @@ docker network inspect new_net
 @REM CONNECT CONTAINER TO NETWORK
 docker network connect new_net db
 
+@REM DOCKER COMPOSE START
+cd first_docker_compose
+docker-compose up -d
+cd ..
+
+@REM DOCKER COMPOSE LOGS
+cd first_docker_compose
+docker-compose logs -f app
+cd ..
+
+@REM DOCKER COMPOSE EXEC COMMAND
+cd first_docker_compose
+docker-compose exec app bash
+cd ..
+
+@REM DOCKER COMPOSE END
+cd first_docker_compose
+docker-compose down
+cd ..
+
 pause
