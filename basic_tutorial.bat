@@ -32,10 +32,10 @@ docker logs --tail 10 -f proxy
 docker volume ls
 
 @REM CREATE VOLUME
-docker volume create mi_volumen
+docker volume create my_volume
 
 @REM MOUNT VOLUME
-docker run -d --name db --mount src=mi_volumen,dst=/data/db mongo
+docker run -d --name db --mount src=my_volume,dst=/data/db mongo
 
 @REM GET CONTAINER INFORMATION
 docker inspect db
@@ -47,7 +47,7 @@ docker exec -it db bash
 @REM ENTER MONGO BASH
 mongosh
 @REM CHANGE DATABASE
-use platzi
+use users_info
 @REM INSERT VALUE
 db.users.insertOne({"name":"Tiago"})
 @REM GET ALL DATA
@@ -60,18 +60,18 @@ docker pull ubuntu
 docker image ls
 
 @REM BUILD IMAGE
-docker build -t ubuntu:miversionextra imagenes/.
+docker build -t ubuntu:mi.extra.version first_image/.
 
 @REM RETAG IMAGE
-docker tag ubuntu:miversionextra tiagoramirez/ubuntu:miversionextra
+docker tag ubuntu:mi.extra.version tiagoramirez/ubuntu:mi.extra.version
 
 @REM RUN MY IMAGE
-docker run -it tiagoramirez/ubuntu:miversionextra
+docker run -it tiagoramirez/ubuntu:mi.extra.version
 
 @REM UPLOAD IMAGE TO DOCKER HUB
-docker push tiagoramirez/ubuntu:miversionextra
+docker push tiagoramirez/ubuntu:mi.extra.version
 
 @REM SEE IMAGE HISTORY
-docker history tiagoramirez/ubuntu:miversionextra
+docker history tiagoramirez/ubuntu:mi.extra.version
 
 pause
