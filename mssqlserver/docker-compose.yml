@@ -3,6 +3,7 @@ version: "3.8"
 services:
   db:
     build: .
+    user: root
     environment:
       - MSSQL_SA_PASSWORD=Hola@1234
       - ACCEPT_EULA=Y
